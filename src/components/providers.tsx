@@ -2,7 +2,7 @@
 
 import { ClerkProvider,useAuth, UserButton } from "@clerk/nextjs";
 import { Authenticated, AuthLoading, ConvexReactClient, Unauthenticated } from "convex/react";
-import { UnauthenticatedView } from "@/features/auth/unauthenticated-view";
+import { UnauthenticatedView } from "@/features/auth/components/unauthenticated-view";
 import { AuthLoadingView } from "@/features/auth/components/auth-loading-view";
 import { ThemeProvider } from "./theme-provider";
 import {ConvexProviderWithClerk}
