@@ -10,7 +10,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
 import { pl } from "date-fns/locale";
-import { Authenticated } from "convex/react";
 
 
 const inter = Inter({
