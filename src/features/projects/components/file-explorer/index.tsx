@@ -16,7 +16,7 @@ import {
   useCreateFile,
   useCreateFolder,
   useFolderContents,
-} from "../../hooks/use-file"
+} from "../../hooks/use-files";
 import { CreateInput } from "./create-input";
 import { LoadingRow } from "./loading-row";
 import { Tree } from "./tree";
@@ -64,7 +64,7 @@ export const FileExplorer = ({ projectId }: { projectId: Id<"projects"> }) => {
           <ChevronRightIcon
             className={cn(
               "size-4 shrink-0 text-muted-foreground",
-              isOpen && "rotate-90"
+              isOpen && "rotate-90",
             )}
           />
           <p className="text-xs uppercase line-clamp-1">

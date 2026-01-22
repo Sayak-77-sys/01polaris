@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { FaGithub } from "react-icons/fa";
 import { Allotment } from "allotment";
 import { FileExplorer } from "./file-explorer";
+import { EditorView } from "@/features/editor/components/editor-view";
 
 
 const MIN_SIDEBAR_WIDTH= 200;
@@ -48,7 +49,7 @@ export const ProjectIdView=({
 
     return (
       <div className="h-full flex flex-col">
-        <nav className="h-8.75 flex items-center bg-sidebar">
+        <nav className="h-8.75 flex items-center bg-sidebar border-b">
           <Tab
             label="Code"
             isActive={activeView === "editor"}
@@ -61,10 +62,8 @@ export const ProjectIdView=({
           />
           <div className="flex-1 flex justify-end h-full">
             <div className="flex items-center gap-1.5 px-3 h-full cursor-pointer text-muted-foreground border-l hover:bg-accent/30">
-            <FaGithub 
-            className="size-3.5"
-            />
-            <span className="text-sm">Export</span>
+              <FaGithub className="size-3.5" />
+              <span className="text-sm">Export</span>
             </div>
           </div>
         </nav>
@@ -72,31 +71,29 @@ export const ProjectIdView=({
           <div
             className={cn(
               "absolute inset-0",
-              activeView === "editor" ? "visible" : "invisible"
+              activeView === "editor" ? "visible" : "invisible",
             )}
           >
-            <Allotment defaultSizes={[DEFAULT_SIDEBAR_WIDTH,DEFAULT_MAIN_SIZE]}>
+            <Allotment
+              defaultSizes={[DEFAULT_SIDEBAR_WIDTH, DEFAULT_MAIN_SIZE]}
+            >
               <Allotment.Pane
-               snap
-               minSize={MIN_SIDEBAR_WIDTH}
-               maxSize={MAX_SIDEBAR_WIDTH}
-               preferredSize={DEFAULT_SIDEBAR_WIDTH}
+                snap
+                minSize={MIN_SIDEBAR_WIDTH}
+                maxSize={MAX_SIDEBAR_WIDTH}
+                preferredSize={DEFAULT_SIDEBAR_WIDTH}
               >
-                <FileExplorer
-                projectId={projectId}
-                />
-
-                
+                <FileExplorer projectId={projectId} />
               </Allotment.Pane>
               <Allotment.Pane>
-                <p>Editor view</p>
+                <EditorView projectId={projectId} />
               </Allotment.Pane>
             </Allotment>
           </div>
           <div
             className={cn(
               "absolute inset-0",
-              activeView === "preview" ? "visible" : "invisible"
+              activeView === "preview" ? "visible" : "invisible",
             )}
           >
             <div>Preview</div>
