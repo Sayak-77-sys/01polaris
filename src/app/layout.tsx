@@ -10,6 +10,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
 import { pl } from "date-fns/locale";
+import { Toaster } from "@/components/ui/sonner";
 
 
 const inter = Inter({
@@ -43,8 +44,8 @@ export default function RootLayout({
         
           <Providers>
             
-
             {children}
+            <Toaster/>
             
           </Providers>
         
